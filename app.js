@@ -1,23 +1,26 @@
-let Controller = (function () {
-    let input = document.querySelector('.input-space');
-    let submitBtn = document.querySelector('.submit-btn');
-    let output = document.querySelector('.input-check');
-    let restart = document.querySelector('#restart')
+{
+    let Controller = (function () {
+        let input = document.querySelector('.input-space');
+        let submitBtn = document.querySelector('.submit-btn');
+        let output = document.querySelector('.input-check');
+        let restart = document.querySelector('#restart')
+    
+        let min, max, tries;
+        min = 1
+        max = 10
+        tries = 2
+        let random = Math.floor(Math.random() * (min*max)) + min
+    
+        restart.style.display = 'none'
+    
+        return {
+            input,submitBtn,random,output,tries,restart
+        }
+     
+    })();
 
-    let min, max, tries;
-    min = 1
-    max = 10
-    tries = 2
-    let random = Math.floor(Math.random() * (min*max)) + min
 
-    restart.style.display = 'none'
-
-    return {
-        input,submitBtn,random,output,tries,restart
-    }
- 
-})();
-
+    // {}
 
 let UIController  = (function () {
     let compNum = Controller.random
@@ -86,4 +89,5 @@ let init =  (()=>{
         UIController.count
     })
 })()
- 
+
+}
